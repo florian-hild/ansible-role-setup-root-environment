@@ -1,0 +1,19 @@
+---
+
+- name: Block
+  tags: setup-root-environment
+  block:
+    - name: "Clone or update git repo {{ git_repo_name }}"
+      tags: setup-root-environment_git_clone
+      ansible.builtin.git:
+        repo: "{{ git_repo }}"
+        dest: "/root/{{ git_repo_name }}"
+        clone: yes
+        update: yes
+        remote: "origin"
+        version: "HEAD"
+    - name: Setup home
+      tags: setup-root-environment_setup_home
+      ansible.builtin.command: "/root/{{ git_repo_name }}/bin/setup_home.sh"
+
+...
