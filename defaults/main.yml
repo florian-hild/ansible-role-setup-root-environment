@@ -1,6 +1,6 @@
 ---
 
-git_repo: 'git@github.com:florian-hild/linux_home_root.git'
+git_repo: 'https://github.com/florian-hild/linux_home_root.git'
 git_repo_name: "linux_home_root"
 
 ...
